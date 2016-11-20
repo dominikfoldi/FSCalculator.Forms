@@ -1,21 +1,160 @@
 ﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FSCalculator.Forms.FSCalculatorFormsPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="{x:Type Button}" x:Key="baseStyle">
+                <Setter Property="FontSize" Value="24"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness"
                     iOS="0, 20, 0, 0" />
     </ContentPage.Padding>
     
     <StackLayout>
-        <Entry x:Name="entry"
-               Placeholder="Enter number"
-               Keyboard="Numeric" />
+        <StackLayout Padding="20">
+            <Label x:Name="HistoryLabel"
+               Text="5 + 10 +"
+               HorizontalTextAlignment="End"
+               FontSize="18"/>
 
-        <Button Text="Calculate"
-                HorizontalOptions="Center"
-                Clicked="OnCalculateButtonClicked" />
+            <Label x:Name="ResultLabel"
+               Text="10"
+               HorizontalTextAlignment="End"
+               FontSize="30"/>
+        </StackLayout>
 
-        <ListView x:Name="listView"
-                  VerticalOptions="FillAndExpand" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="ButtonClear"
+                    Text="C"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Clicked="OnClearButtonClicked"/>
+
+            <Button x:Name="ButtonDelete"
+                    Text="DEL"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Clicked="OnDeleteButtonClicked"/>
+
+            <Button x:Name="ButtonDivide"
+                    Text="/"
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    Clicked="OnDivideButtonClicked"/>
+
+            <Button x:Name="Button7"
+                    Text="7"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Clicked="OnButton7Clicked"/>
+
+            <Button x:Name="Button8"
+                    Text="8"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Clicked="OnButton8Clicked"/>
+
+            <Button x:Name="Button9"
+                    Text="9"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Clicked="OnButton9Clicked"/>
+
+            <Button x:Name="ButtonMultiply"
+                    Text="*"
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    Clicked="OnMultiplyButtonClicked"/>
+
+            <Button x:Name="Button4"
+                    Text="4"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Clicked="OnButton4Clicked"/>
+
+            <Button x:Name="Button5"
+                    Text="5"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Clicked="OnButton5Clicked"/>
+
+            <Button x:Name="Button6"
+                    Text="6"
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    Clicked="OnButton6Clicked"/>
+
+            <Button x:Name="ButtonSubtract"
+                    Text="-"
+                    Grid.Row="2"
+                    Grid.Column="3"
+                    Clicked="OnSubtractButtonClicked"/>
+
+            <Button x:Name="Button1"
+                    Text="1"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Clicked="OnButton1Clicked"/>
+
+            <Button x:Name="Button2"
+                    Text="2"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Clicked="OnButton2Clicked"/>
+
+            <Button x:Name="Button3"
+                    Text="3"
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    Clicked="OnButton3Clicked"/>
+
+            <Button x:Name="ButtonAdd"
+                    Text="+"
+                    Grid.Row="3"
+                    Grid.Column="3"
+                    Clicked="OnAddButtonClicked"/>
+
+            <Button x:Name="ButtonNegate"
+                    Text="NEG"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Clicked="OnNegateButtonClicked"/>
+
+            <Button x:Name="Button0"
+                    Text="0"
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Clicked="OnButton0Clicked"/>
+
+            <Button x:Name="ButtonDecimalPoint"
+                    Text="."
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    Clicked="OnDecimalPointButtonClicked"/>
+
+            <Button x:Name="ButtonEvaluate"
+                    Text="="
+                    Grid.Row="4"
+                    Grid.Column="3"
+                    Clicked="OnEvaluateButtonClicked"/>
+        </Grid>
     </StackLayout>
 </ContentPage>
