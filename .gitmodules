@@ -1,0 +1,3 @@
+[submodule "FSCalculator"]
+	path = FSCalculator
+	url = https://github.com/dominikfoldi/FSCalculator
