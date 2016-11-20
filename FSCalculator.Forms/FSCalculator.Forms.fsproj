@@ -52,7 +52,7 @@
     <Compile Include="AssemblyInfo.fs" />
     <Content Include="packages.config" />
     <Compile Include="FSCalculator.Forms.Page.fs" />
-    <None Include="FSCalculator.Forms.Page.xaml" />
+    <EmbeddedResource Include="FSCalculator.Forms.Page.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core">
